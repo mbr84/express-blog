@@ -6,6 +6,7 @@ const blogEngine = require('./blog');
 app.set('view engine', 'html');
 app.engine('html', hbs.__express);
 app.use(express.bodyParser());
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'My Blog', entries: blogEngine.getBlogEntries() });
