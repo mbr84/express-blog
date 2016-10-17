@@ -43,6 +43,6 @@ exports.getBlogEntries = () => {
 
 exports.getBlogEntry = (id) => {
   for (let i = 0; i < entries.length; i++) {
-    if (entries[i].id === id) return entries[i];
+    if (entries[i].id == id) return entries[i];
   }
 };
