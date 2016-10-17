@@ -1,16 +1,20 @@
 const express = require('express');
 const app = express();
+const hbs = require('hbs');
+
+app.set('view engine', 'html');
+app.engine('html', hbs.__express);
 
 app.get('/', (req, res) => {
-  res.sendfile('./views/index.html');
+  res.render('index');
 });
 
 app.get('/about', (req, res) => {
-  res.sendfile('./views/about.html');
+  res.render('about');
 });
 
 app.get('/article', (req, res) => {
-  res.sendfile('./views/article.html');
+  res.render('article');
 });
 
 app.listen(3000);
